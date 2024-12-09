@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ice Cream Parlor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        form {
+            margin-top: 15px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin-right: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Ice Cream Parlor</h1>
+    <h2>Available Flavors</h2>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor[1] }} - {{ flavor[2] }} 
+                {% if flavor[3] %}
+                    (Seasonal)
+                {% endif %}
+                <a href="/add_to_cart/{{ flavor[0] }}" class="button">Add to Cart</a>
+            </li>
+        {% endfor %}
+    </ul>
+ 
+    <h3>View Allergens</h3>
+<a href="/allergens" class="button">View All Allergens</a>
+<a href="/cart" class="button">View Cart</a> 
+    <h3>Search Flavors</h3>
+    <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search flavors">
+        <button type="submit">Search</button>
+
+<!--        <h3>Suggest a Flavor</h3>
+ <form action="/suggest_flavor" method="post">
+    <input type="text" name="flavor" placeholder="Flavor suggestion">
+    <button type="submit">Suggest</button>
+    <h3>View Flavor Suggestions</h3>
+<a href="/view_suggestions" class="button">View Suggestions</a> -->
+
+</form>
+
+    </form>
+
+    <h3>Add an Allergen</h3>
+    <form action="/add_allergen" method="post">
+        <input type="text" name="allergen" placeholder="Allergen name">
+        <button type="submit">Add</button>
+    </form>
+
+  
+</body>
+</html>

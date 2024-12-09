@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Allergens</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #3f7cb1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Allergens List</h1>
+    <ul>
+        {% for allergen in allergens %}
+            <li>{{ allergen[1] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html>

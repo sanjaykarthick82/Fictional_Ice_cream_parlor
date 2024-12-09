@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flavor Suggestions</title>
+</head>
+<body>
+    <h1>Flavor Suggestions</h1>
+    <ul>
+        {% for suggestion in suggestions %}
+            <li>{{ suggestion[0] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html>
