@@ -11,10 +11,12 @@ scoop install python
 -It installs Python via Scoop.
 
  python --version 
--To check the version of python and also to verify whether python is installed correctly. 
+-To check the version of python and also to verify whether python is installed correctly.
+
 python database.py 
 -It executes the database.py script to initialize the database.
- pip install flask 
+
+pip install flask 
 -It installs the Flask web framework using Python's package manager, pip.  
 
 pip show flask 
